@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!-- chatgpt 03/10/2026 19:37 -->
+<head>
+    <title>Résultats YCÔNE  novembre 2026</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,
+                minimum-scale=0.6, maximum-scale=3.0,
+                user-scalable=yes, viewport-fit=cover">
+
+    <meta name="author" content="erikpier">
+
+<style>
+    /* =========================================================
+        CONFIGURATION GÉNÉRALE
+    ========================================================= */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    /* =========================================================
+        VARIABLES
+    ========================================================= */
+    :root {
+
+        --line1-height: 32px;
+
+        --bg-header-1: #1b13b0;
+        --bg-header-2: #254e75;
+
+        --text-header-1: #ffffff;
+
+        --col1-width: 165px;
+        --col2-width: 65px;
+        --col3-width: 50px;
+
+        --col2-left: 230px;  /* Égal à --col1-width */ 
+
+        --bg-fond: darkslategray;
+        --bg-fond1: #1b13b0;
+        --bg-fond2: #ff8000;
+        --bg-fond3: #88ea88;
+
+        --texte1: #f5c60aed;
+        --texte2: #d7c98d;
+        --texte3: #f3cece;
+        --texte4: yellow;
+        --texte5: #b7ff00;
+        --texte6: #351c1c;
+        --texte7: var(--bg-header-1);
+
+        --lien: #42a9ed;
+        --lien1: #a8d6f5;
+        --lien2: #453cf4;
+
+        --titre: #0b4f8a;
+
+        --table: #ffffff;
+        --entete: #d8eaf8;
+        --entete-texte: #222;
+
+        --ligne1: #252a30;
+        --ligne2: #4a525d;
+        --survol: #308f5ff2;
+
+        --border1: 1px solid #b9c6d2;
+        --border2: 2px solid #b9c6d2;
+        --border3: 3px solid #b9c6d2;
+
+        --border-groupe: 3px solid #b9c6d2;
+
+        --ombre: 0 2px 8px rgba(0,0,0,.12);
+    }
+    .rouge { color: red; }
+    
+    .vert { color: green; }  
+    
+    .orange { color: orange; }
+    
+    .bleu { color: blue; }   
+    /* =========================================================
+        HTML / BODY
+    ========================================================= */
+    html,
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 5px;
+        box-sizing: border-box;
+        overflow: auto !important; /* Permet le défilement global de la page si le conteneur déborde*/
+        font-family: Segoe UI, Arial, Helvetica, sans-serif;
+        touch-action: manipulation !important; /* Autorise tous les gestes natifs du navigateur (zoom + scroll) */
+        background: var(--bg-fond);
+        font-size: 13px;
+    }
+
+    /* =========================================================
+        TITRES
+    ========================================================= */
+    h1 {
+        background: var(--bg-fond); /* Fond pour éviter la transparence */
+        position: sticky;
+        flex-shrink: 0; /* Empêche les titres de se réduire si la fenêtre est petite */
+        margin: 0 0 6px 0;
+        font-size: 1.5rem;
+        color: var(--texte1);
+        z-index: 10;
+    }
+
+    h2 {
+        margin: 0 0 12px 0;
+        font-size: 1.1rem;
+        color: var(--texte2);
+    }
+
+    /* Alignement horizontal de l'icône et des titres */
+    .header-container {
+        display: flex;
+        align-items: center; /* Aligne verticalement l'icône et le texte au centre */
+        gap: 15px;           /* Crée un espace de 15px entre l'icône et les titres */
+        padding: 10px;       /* Optionnel : ajoute un peu d'espace autour du bloc */
+    }
+
+    /* Optionnel : Remise à zéro des marges des titres pour éviter les décalages */
+    .titles-block h1, 
+    .titles-block h2 {
+        margin: 0;
+    }
+
+    /* Optionnel : Un petit espace sous le H1 si vous le souhaitez */
+    .titles-block h1 {
+        margin-bottom: 4px;
+    }
+
+    /* =========================================================
+        CONTENEUR DU TABLEAU
+    ========================================================= */
+    .table-container {
+        width: 100%;
+        overflow: auto !important; /* Déclenche les défilements H/V */
+        padding-right: 15px; /* Espace entre le tableau et la barre de défilement droite */
+        padding-bottom: 15px; /* Espace entre le tableau et la barre de défilement bas */
+        max-height: 75vh !important; /* Garde de l'espace sur mobile pour défiler la page globale */
+        flex-grow: 1;  /* Remplit tout l'espace vertical disponible */
+        margin-bottom: 15px !important; /* Marge externe sous le conteneur */
+        /* --- OPTIMISATION FLUIDITÉ / ACCÉLÉRATION MATÉRIELLE --- */
+        -webkit-overflow-scrolling: touch; /* Active le défilement matériel fluide tactile */
+        touch-action: pan-x pan-y pinch-zoom !important;
+        will-change: scroll-position; /* Prépare le navigateur au défilement */
+        transform: translateZ(0); /* Force le rendu par la carte graphique (GPU) */ 
+    }
+
+    /* =========================================================
+        TABLE (Calcul de largeur strict) ---
+    ========================================================= */
+    table {
+        border-collapse: separate; /* Obligatoire pour éviter les bugs de borders sticky */
+        border-spacing: 0;
+        /* Correction des bordures extérieures pour le mode 'separate' */
+        border-top: var(--border1);
+        border-left: var(--border1);
+        border-right: var(--border-groupe);
+        /* INDISPENSABLE pour les colonnes variables : la table s'adapte à son contenu */
+        width: max-content !important;
+        min-width: 900px !important;
+        table-layout: auto !important; /* Permet l'autofit sur les colonnes variables */
+    }
+
+    th,
+    td {
+        box-sizing: border-box !important;
+        padding: 7px 10px;
+        border-right: var(--border1);
+        border-bottom: var(--border1);
+        white-space: nowrap; /* Empêche le texte de sauter à la ligne involontairement */
+        color: var(--texte3);
+        font-weight: 500;
+    }
+
+    th.dynamic-col a {
+        color: var(--text-header-1);
+    }
+
+    /* =========================================================
+        LIGNE 1
+    ========================================================= */
+    .sticky-row-1 th {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        color: var(--text-header-1);
+        font-weight: 500;
+        border-top: var(--border2);
+        background-color: var(--bg-header-1);
+    }
+
+    .sticky-row-1 th.sticky-parent {
+        left: 0;
+        z-index: 30;
+        background-color: var(--bg-header-1);
+    }
+
+    /* =========================================================
+        LIGNE 2
+    ========================================================= */
+    .sticky-row-2 th {
+        position: sticky;
+        top: var(--line1-height);
+        z-index: 15;
+        background-color: var(--bg-header-2);
+        color: var(--text-header-1);
+        font-weight: 500;
+    }
+
+    /* =========================================================
+        3 PREMIÈRES COLONNES FIXES
+    ========================================================= */
+    .col-1,
+    tbody td:nth-child(1) {
+        position: sticky;
+        left: 0;
+        background: fixed; /* Assure que le fond reste fixe lors du défilement */
+        width: var(--col1-width);
+        min-width: var(--col1-width);
+        max-width: var(--col1-width);
+    }
+
+
+    .col-2,
+    tbody td:nth-child(2) {
+        position: sticky;
+        left: 165px;
+        width: var(--col2-width);
+        min-width: var(--col2-width);
+        max-width: var(--col2-width);
+    }
+
+    .col-3,
+    tbody td:nth-child(3) {
+        position: sticky !important;
+        left: var(--col2-left) !important;
+        width: var(--col3-width);
+        min-width: var(--col3-width);
+        max-width: var(--col3-width);
+    }
+
+    /* =========================================================
+        Z-INDEX DES COLONNES FIXES
+    ========================================================= */
+    .sticky-row-1 .col-1,
+    .sticky-row-1 .col-2,
+    .sticky-row-1 .col-3 {
+        z-index: 30;
+        background: var(--bg-header-1);
+        color: var(--text-header-1);
+    }
+
+    .sticky-row-2 .col-1,
+    .sticky-row-2 .col-2,
+    .sticky-row-2 .col-3 {
+        z-index: 25;
+        background: var(--bg-header-1);
+        color: var(--text-header-1);
+    }
+
+
+    tbody td:nth-child(1),
+    tbody td:nth-child(2),
+    tbody td:nth-child(3) {
+        z-index: 5;
+        background: var(--bg-header-1);
+        color: var(--text-header-1);
+    }
+
+    /* =========================================================
+        COLONNES VARIABLES
+    ========================================================= */
+    .dynamic-col,
+    tbody td:not(:nth-child(-n+3)) {
+        width: max-content !important; /* Force l'Autofit sur le texte le plus long */
+        white-space: nowrap; /* Empêche le texte de sauter à la ligne involontairement */
+        background-color: var(--bg-header-2);
+    }
+
+    /* =========================================================
+        ALTERNANCE DES LIGNES
+    ========================================================= */
+    tbody tr:nth-child(odd) td:not(:nth-child(-n+3)) { /* Lignes impaires */
+        background: var(--ligne1);
+    }
+
+    tbody tr:nth-child(even) td:not(:nth-child(-n+3)) { /* Lignes paires */
+        background: var(--ligne2);
+    }
+
+    /* =========================================================
+        CENTRAGE DES CELLULES
+    ========================================================= */
+    tbody td:nth-child(5),
+    tbody td:nth-child(6),
+    tbody td:nth-child(7),
+    tbody td:nth-child(8),
+
+    tbody td:nth-child(10),
+    tbody td:nth-child(11),
+    tbody td:nth-child(12),
+    tbody td:nth-child(13),
+
+    tbody td:nth-child(15),
+    tbody td:nth-child(16),
+    tbody td:nth-child(17),
+    tbody td:nth-child(18),
+
+    tbody td:nth-child(20),
+    tbody td:nth-child(21),
+    tbody td:nth-child(22),
+    tbody td:nth-child(23),
+
+    tbody td:nth-child(25),
+    tbody td:nth-child(26),
+    tbody td:nth-child(27),
+    tbody td:nth-child(28),
+
+    tbody td:nth-child(30),
+    tbody td:nth-child(31),
+    tbody td:nth-child(32),
+    tbody td:nth-child(33),
+
+    tbody td:nth-child(35),
+    tbody td:nth-child(36),
+    tbody td:nth-child(37),
+    tbody td:nth-child(38),
+
+    tbody td:nth-child(40),
+    tbody td:nth-child(41),
+    tbody td:nth-child(42),
+    tbody td:nth-child(43),
+
+    tbody td:nth-child(45),
+    tbody td:nth-child(46),
+    tbody td:nth-child(47),
+    tbody td:nth-child(48) {
+        text-align: center;
+    }
+
+    /* =========================================================
+        SURVOL (HOVER) ---
+    ========================================================= */
+    tbody tr:hover td:not(:nth-child(-n+3)) {
+        background-color: var(--survol) !important;
+        color: var(--texte4);
+        transition: background-color 0.15s ease;
+        cursor: pointer;
+    }
+
+    /* =========================================================
+        COLONNES DE CHOIX
+    ========================================================= */
+    /* En ciblant directement les "td" qui ont la classe "col-choix" à l'intérieur du "tbody",
+       le navigateur donne la priorité absolue à cette couleur, qu'il s'agisse d'une ligne paire ou impaire */    
+    tbody td.col-choix {
+        color: var(--texte5) !important;
+        font-weight: 600 !important;
+    }
+
+    /* =========================================================
+        GROUPES VIDES
+    ========================================================= */
+    .groupe-vide {
+        background-color: var(--bg-fond1) !important;
+        opacity: 0.6; /* Optionnel : estompe légèrement la zone */
+    }
+
+    /* =========================================================
+        BORDURES DES GROUPES
+    ========================================================= */
+    thead tr:nth-child(1) th {
+        border-top: var(--border2);
+    }
+
+    thead tr:nth-child(1) th:nth-child(2) {
+        border-left: var(--border2) !important;
+        border-right: var(--border3) !important;
+    }
+
+    thead tr:nth-child(1) th:nth-child(3) {
+        border-right: var(--border3) !important;
+    }
+
+    thead tr:nth-child(2) th:nth-child(4),
+    tbody tr td:nth-child(4) {
+        border-left: var(--border3) !important;
+    }
+
+    thead tr:nth-child(2) th:nth-child(8),
+    tbody tr td:nth-child(8),
+
+    thead tr:nth-child(2) th:nth-child(13),
+    tbody tr td:nth-child(13),
+
+    thead tr:nth-child(2) th:nth-child(18),
+    tbody tr td:nth-child(18),
+
+    thead tr:nth-child(2) th:nth-child(23),
+    tbody tr td:nth-child(23),
+
+    thead tr:nth-child(2) th:nth-child(28),
+    tbody tr td:nth-child(28),
+
+    thead tr:nth-child(2) th:nth-child(33),
+    tbody tr td:nth-child(33),
+
+    thead tr:nth-child(2) th:nth-child(38),
+    tbody tr td:nth-child(38),
+
+    thead tr:nth-child(2) th:nth-child(43),
+    tbody tr td:nth-child(43),
+
+    thead tr:nth-child(2) th:nth-child(48),
+    tbody tr td:nth-child(48),
+
+    thead tr:nth-child(2) th:nth-child(53),
+    tbody tr td:nth-child(53),
+
+    thead tr:nth-child(2) th:nth-child(58),
+    tbody tr td:nth-child(58),
+
+    thead tr:nth-child(2) th:nth-child(63),
+    tbody tr td:nth-child(63),
+
+    thead tr:nth-child(2) th:nth-child(68),
+    tbody tr td:nth-child(68),
+
+    thead tr:nth-child(2) th:nth-child(73),
+    tbody tr td:nth-child(73),
+
+    thead tr:nth-child(2) th:nth-child(78),
+    tbody tr td:nth-child(78),
+
+    thead tr:nth-child(2) th:nth-child(83),
+    tbody tr td:nth-child(83),
+
+    thead tr:nth-child(2) th:nth-child(88),
+    tbody tr td:nth-child(88),
+
+    thead tr:nth-child(2) th:nth-child(93),
+    tbody tr td:nth-child(93),
+
+    thead tr:nth-child(2) th:nth-child(98),
+    tbody tr td:nth-child(98) {
+        border-right: var(--border3) !important;
+    }
+
+    /* =========================================================
+        LIENS DU TABLEAU
+    ========================================================= */
+    thead tr:nth-child(1) a {
+        display: inline-block;
+        width: auto; /* Permet de survoler toute la cellule si le texte est long */
+    }
+
+    table td a,
+    table th a:hover {
+        color: var(--texte6);
+        background-color: var(--bg-fond3); /* Devient un peu plus clair au survol */
+        text-decoration: underline;
+    }
+
+    .lien {
+        text-decoration: none;
+        padding: 3px 5px; /* Optionnel : ajoute un espace autour du texte */
+        transition: background-color 0.2s ease; /* Optionnel : rend l'apparition fluide */
+        color: var(--lien1) !important;
+    }
+
+    .lien:hover {
+        background-color: var(--bg-fond3);
+        text-decoration: underline;
+        color: var(--texte7) !important;
+    }
+
+    /* =========================================================
+        BOUTON INFO ⓘ
+    ========================================================= */
+    .info-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 23px;
+        height: 23px;
+        margin-left: 8px;
+        padding: 0;
+        border: 1px solid rgba(255,255,255,0.65);
+        border-radius: 50%;
+        background: rgba(245, 103, 8, 0.948);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1;
+        cursor: pointer;
+        vertical-align: middle;
+        transition: all 0.15s ease;
+    }
+
+    .info-btn:hover {
+        background: rgb(182, 231, 84);
+        color: rgb(211, 19, 19);
+        transform: scale(1.08);
+    }
+
+    .info-btn:active {
+        transform: scale(0.95);
+    }
+
+    /* =========================================================
+        FENÊTRE MODALE
+     ========================================================= */
+    .info-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(0,0,0,0.65);
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .info-modal-content {
+        position: relative;
+        width: min(650px, 95vw);
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 22px;
+        background: var(--table);
+        color: var(--entete-texte);
+        border: 2px solid var(--bg-header-1);
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .info-modal-title { 
+        margin: 0 35px 15px 0;
+        color: var(--titre);
+        font-size: 1.4rem;
+        font-weight: 625;
+    }
+
+    .info-modal-text {
+        margin-bottom: 12px;
+    }
+
+    .info-modal-content a {
+        color: var(--lien2);
+        font-weight: 600;
+    }
+
+    .info-modal-content a:hover {
+        color: var(--titre);
+        background-color: var(--bg-fond3);
+        transition: background-color 0.15s ease;
+        text-decoration: underline;
+    }
+    
+    /* Bouton X */
+    .info-modal-close {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+        color: #666;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .info-modal-close:hover {
+        background: #ddd;
+        color: #111;
+    }
+
+    /* Bouton Fermer */
+    .info-modal-footer {
+        margin-top: 20px;
+        text-align: right;
+    }
+
+    .info-modal-footer button {
+        padding: 7px 16px;
+        border: none;
+        border-radius: 5px;
+        background: var(--bg-header-1);
+        color: white;
+        cursor: pointer;
+    }
+
+    .info-modal-footer button:hover {
+        opacity: 0.85;
+    }
+
+    /* =========================================================
+        PC ADAPTATION ORDINATEUR (ECRANS DE PC) ---
+    ========================================================= */
+    @media screen and (min-width: 769px) {
+        html,
+        body {
+            height: 100vh;
+            overflow: hidden; /* Supprime l'ascenseur de la page web globale sur PC */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .table-container {
+            flex-grow: 1;
+            max-height: none; /* Le tableau prend tout le reste de l'écran */
+        }
+    }
+
+    /* =========================================================
+        SMARTPHONE PAYSAGE
+    ========================================================= */
+    @media screen and (max-height: 500px)
+        and (orientation: landscape) {
+        .table-container {
+        /* On réduit la hauteur max pour laisser respirer le bas de la page */    
+            max-height: 65vh !important;
+            margin-bottom: 15px !important; /* Marge externe sous le conteneur */
+        }
+
+        body { /* Espace d'aisance supplémentaire en bas du body pour le défilement global */
+            padding-bottom: 20px !important;
+        }
+    }
+
+    /* =========================================================
+        SMARTPHONE
+      ========================================================= */
+    @media screen and (max-width: 600px) {
+        .info-modal {
+            padding: 10px;
+        }
+
+        .info-modal-content {
+            width: 96vw;
+            max-height: 90vh;
+            padding: 18px;
+        }
+
+        .info-modal-title {
+            font-size: 1.15rem;
+        }
+    }
+
+    /* =========================================================
+        TOTALISATEUR
+      ========================================================= */
+    .ligne-totaux td {
+        font-weight: 700;
+        text-align: center;
+        border-top: var(--border1,) !important;
+        background: var(--fond-entete,);
+    }
+
+    .separateur-inscriptions {
+        margin: 1.25rem 0 0.5rem;
+        padding: 0.6rem 0.75rem;
+        border-top: 2px solid currentColor;
+        font-size: 1.05rem;
+    }
+    .mon-icone {
+        /* Définissez la taille de votre choix ici */
+        width: 50px; 
+        height: 50px;        
+        /* Optionnel : garantit que le ratio carré (1:1) reste parfait */
+        aspect-ratio: 1 / 1;    
+    }
+</style>
+</head>
+
+<body> 
+<div id="body">
+
+    <!-- =====================================================
+        TITRE
+    ========================================================== -->
+    <header class="header-container">
+    <!-- Votre icône SVG -->
+    <svg class="mon-icone" width="100%" height="100%" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- vector-effect ajouté pour garder des bordures proportionnelles -->
+        <rect x="10" y="10" width="180" height="180" fill="#f3f1e9" stroke="#453cf4" stroke-width="2" />
+        <rect x="25" y="25" width="150" height="150" fill="none" stroke="#453cf4" stroke-width="14"  />
+        <polygon points="25,175 25,28 170,175" fill="#453cf4"/>
+        <g fill="#453cf4">
+        <text x="66" y="65" font-family="'Fancy', 'Helvetica Neue', Arial, sans-serif" font-weight="1000" font-size="25" letter-spacing="0">ƳᑕÔᑎᗴ</text>      
+        <text x="98" y="90" font-family="'Fancy', 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="16" letter-spacing="-1">Sens</text>
+        </g> 
+    </svg>
+    <!-- Le bloc contenant vos titres -->
+    <div class="titles-block">    
+    <h1>
+        Historique des Résultats YCÔNE - NOVEMBRE 2026  &#8195;
+    </h1>
+
+    <!-- =====================================================
+        LIENS
+        ===================================================== -->
+    <h2>
+        &#8195;&#8195;&#8195;&#8195;&#8195;
+        Lien :
+        <a class="lien"
+            href="https://erikpier2.github.io/ycone_2026/"
+            target="_blank">
+            <i>HISTORIQUE</i>
+        </a>
+        <span>
+            &#8195;&#8195;&#8195;&#8195;&#8195;&#8195;
+        </span>
+        Calendrier de la Ligue :
+        <a class="lien"
+            href="https://docs.google.com/spreadsheets/d/1httJl1hiOHUBR7Vo0rlS1slkQXeuAh_5/edit?gid=91997828#gid=91997828"
+            target="_blank">
+            <i>LBFCO</i>
+        </a>
+    </h2>
+    </div>
+    </header>
+    <!-- =====================================================
+        CHARGEMENT
+    ======================================================= -->
+    <div id="loading">
+        ...
+    </div>
+
+    <!-- =====================================================
+        TABLEAU
+    ========================================================== -->
+    <div id="excel-table-container"
+        class="table-container">
+    </div>
+
+    <!-- =====================================================
+        FENÊTRE D'INFORMATIONS
+        ===================================================== -->
+    <div id="info-modal"
+        class="info-modal">
+        <div class="info-modal-content">
+            <button
+                type="button"
+                class="info-modal-close"
+                aria-label="Fermer">
+                ×
+            </button>
+
+            <h3 id="info-modal-title"
+                class="info-modal-title">
+            </h3>
+
+            <div id="info-modal-body">
+            </div>
+
+            <div class="info-modal-footer">
+
+                <button
+                    type="button"
+                    id="info-modal-close-btn">
+                    Fermer
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- =====================================================
+        JAVASCRIPT
+        ===================================================== -->
+    <script>
+        // Date du jour
+        const aujourdHui = new Date();
+
+        // Format yyyy-mm-dd en heure locale
+        const annee = aujourdHui.getFullYear();
+        const mois = String(aujourdHui.getMonth() + 1).padStart(2, '0');
+        const jour = String(aujourdHui.getDate()).padStart(2, '0');
+        const dateDebut = `${annee}-${mois}-${jour}`;
+
+        // Dernier jour de l'année suivante
+        const dateFin = `${annee + 1}-12-31`;
+
+        // Construction du lien
+        const url = 
+        `https://api.ffcorientation.fr/iframe/agenda/liste/?du=${dateDebut}&au=${dateFin}&types=cou&page=1`;
+
+        document.getElementById('lienAgenda').href = url;
+        console.log("Clic détecté sur la balise d'orientation");
+    </script>    
+    <script>
+    /* =========================================================
+        FICHIERS
+      ========================================================= */
+    const csvFileUrl = 'donnees.csv';
+    const infoFileUrl = 'infos.json';
+
+    let infosGroupes = {};
+
+    /* =========================================================
+        DICTIONNAIRE DES LIENS DU TABLEAU
+      ========================================================= */
+    const liensPersonnalises = {
+        "":"",
+        "1.Rés.": "",      
+        "1.Pl.": "",
+
+        "":"",
+        "2.Hor.":"",
+        "2.Rés.": "",
+        "2.Pl.":"",
+        "2.écart":"",
+
+        "":"",
+        "3.Hor.":"",
+        "3.Rés.": "",
+        "3.Pl.":"",
+        "3.écart":"",
+
+        "":"",
+        "4.Rés.": "",
+        "4.Pl.": "",
+
+        "":"",
+        "5.Hor.":"",
+        "5.Rés.": "",
+        "5.Pl.": "",
+
+        "":"",
+        "6.Rés.": "",
+        "6.Pl.": "",
+
+        "":"",
+        "7.Circ.": "",
+        "7.Hor.": "",
+        "7.Rés.": "",
+        "7.écart": "",
+
+        "8.Circ.": "",
+        "8.Hor.": "",
+        "8.écart": "",
+
+        "9.Circ.": "",
+        "9.Hor.": "",
+        "9.écart": "",
+    };
+
+    /* =========================================================
+        CHARGEMENT DU CSV
+      ========================================================= */
+    async function loadCsvTable() {
+        try {
+            /* =================================================
+                CHARGEMENT DE INFOS.JSON
+            ================================================= */
+            try {
+                const infoResponse =
+                    await fetch(infoFileUrl);
+
+                if (infoResponse.ok) {
+
+                    infosGroupes =
+                        await infoResponse.json();
+
+                    console.log(
+                        "infos.json chargé",
+                        infosGroupes
+                    );
+
+                } else {
+
+                    console.warn(
+                        "Fichier infos.json non trouvé."
+                    );
+                }
+
+            } catch (e) {
+
+                console.warn(
+                    "Impossible de charger infos.json :",
+                    e
+                );
+            }
+
+            /* =================================================
+                CHARGEMENT DU CSV
+            ================================================== */
+            const response =
+                await fetch(csvFileUrl);
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Le fichier 'donnees.csv' est introuvable."
+                );
+            }
+
+            /* =================================================
+                LECTURE WINDOWS-1252
+              ================================================= */
+            const buffer =
+                await response.arrayBuffer();
+
+            const decoder =
+                new TextDecoder('windows-1252');
+
+            const textData =
+                decoder.decode(buffer);
+
+            const lines =
+                textData.split(/\r?\n/);
+
+            if (lines.length === 0) {
+
+                throw new Error(
+                    "Le fichier CSV est vide."
+                );
+            }
+
+            /* =================================================
+                DÉTECTION DES COLONNES AVEC DONNÉES
+              ================================================= */
+            const colonnesAvecDonnees =
+                new Set();
+
+            lines.forEach(
+                (line, rowIndex) => {
+
+                    if (
+                        line.trim() === "" ||
+                        /^;+$/.test(line.trim())
+                    ) {
+                        return;
+                    }
+
+                    if (rowIndex >= 2) {
+
+                        const cells =
+                            line.split(';');
+
+                        cells.forEach(
+                            (cellValue, colIndex) => {
+
+                                if (
+                                    cellValue.trim() !== ""
+                                ) {
+
+                                    colonnesAvecDonnees
+                                        .add(colIndex);
+                                }
+                            }
+                        );
+                    }
+                }
+            );
+
+
+            /* =================================================
+                TEST D'ACTIVITÉ D'UN GROUPE DE 5
+              ================================================= */
+            function estGroupeActif(
+                indexDeDepart
+            ) {
+
+                for (let i = 0; i < 5; i++) {
+
+                    if (
+                        colonnesAvecDonnees.has(
+                            indexDeDepart + i
+                        )
+                    ) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            /* =========================================================
+                TEST : LA LIGNE POSSÈDE-T-ELLE UNE DONNÉE VISIBLE ?
+            ========================================================= */
+            function ligneAUneDonneeVisible(cells) {
+            
+                for (let debutGroupe = 3;
+                    debutGroupe < cells.length;
+                    debutGroupe += 5) {
+                    
+                    // On ne regarde que les groupes qui restent visibles
+                    if (!estGroupeActif(debutGroupe)) {
+                        continue;
+                    }
+                
+                    // Recherche d'au moins une cellule réellement remplie
+                    for (let i = 0; i < 5; i++) {
+                    
+                        const index = debutGroupe + i;
+                    
+                        if (index < cells.length &&
+                            cells[index].trim() !== "") {
+                            
+                            return true;
+                        }
+                    }
+                }
+            
+                return false;
+            }
+
+            /* =================================================
+                CONSTRUCTION DU TABLEAU
+              ================================================= */
+            let htmlRaw =
+                "<table><thead>";
+
+            let isBodyOpen = false;
+
+            /* =================================================
+                COLONNES DE CHOIX
+              ================================================= */
+            const colonnesDeChoix = [
+                4, 9, 14, 19, 24,
+                29, 34, 39, 44,
+                49, 54, 59, 64,
+                69, 74, 79, 84,
+                89, 94, 99
+            ];
+
+            /* =================================================
+                LECTURE DES LIGNES
+              ================================================= */
+            lines.forEach(
+                (line, rowIndex) => {
+
+                    /* -----------------------------------------
+                        IGNORE LES LIGNES VIDES
+                      ----------------------------------------- */
+                    if (
+                        line.trim() === "" ||
+                        /^;+$/.test(line.trim())
+                    ) {
+
+                        return;
+                    }
+
+                    const cells =
+                        line.split(';');
+                    /* Passage au tbody dès la première ligne de données */
+                    if (rowIndex >= 2 && !isBodyOpen) {
+                        htmlRaw += "</thead><tbody>";
+                        isBodyOpen = true;
+                    }    
+
+                    /* =================================================
+                        MASQUAGE DES PERSONNES SANS DONNÉE VISIBLE
+                      ================================================= */
+                    if (
+                        rowIndex >= 2 &&
+                        !ligneAUneDonneeVisible(cells)
+                    ) {
+                        return;
+                    }    
+
+                    /* -----------------------------------------
+                        CLASSES DES LIGNES D'EN-TÊTE
+                      ----------------------------------------- */
+                    let rowClass = "";
+
+                    if (rowIndex === 0) {
+
+                        rowClass =
+                            ' class="sticky-row-1"';
+
+                    } else if (rowIndex === 1) {
+
+                        rowClass =
+                            ' class="sticky-row-2"';
+                    }
+
+                    htmlRaw +=
+                        `<tr${rowClass}>`;
+
+                    /* -----------------------------------------
+                        INDEX VIRTUEL
+                      ----------------------------------------- */
+                    let colVirtualIndex = 0;
+
+                    /* =================================================
+                        TRAITEMENT DES CELLULES
+                      ================================================= */
+                    for (
+                        let colIndex = 0;
+                        colIndex < cells.length;
+                        colIndex++
+                    ) {
+
+                        let cleanValue =
+                            cells[colIndex].trim();
+
+                        const cellTag =
+                            rowIndex < 2
+                                ? 'th'
+                                : 'td';
+
+                        /* =============================================
+                            MASQUAGE AUTOMATIQUE DES GROUPES VIDES
+                          ============================================= */
+                        if (colIndex >= 3) {
+
+                            const startGroupIdx =
+                                3 +
+                                Math.floor(
+                                    (colIndex - 3) / 5
+                                ) * 5;
+
+                            if (
+                                !estGroupeActif(
+                                    startGroupIdx
+                                )
+                            ) {
+
+                                continue;
+                            }
+                        }
+
+                        /* =============================================
+                            CLASSES DES COLONNES
+                          ============================================= */
+                        let cellClass = "";
+
+                        if (colIndex === 0) {
+
+                            cellClass = "col-1";
+
+                        } else if (colIndex === 1) {
+
+                            cellClass = "col-2";
+
+                        } else if (colIndex === 2) {
+
+                            cellClass = "col-3";
+
+                        } else {
+
+                            cellClass = "dynamic-col";
+                        }
+
+                        /* =============================================
+                            CORRECTION DES TEMPS
+                          ============================================= */
+                        if (cleanValue.includes(':')) {
+
+                            const timeParts =
+                                cleanValue.split(':');
+
+                            if (
+                                timeParts.length === 3
+                            ) {
+
+                                const hours =
+                                    timeParts[0].trim();
+
+                                if (
+                                    hours === '00' ||
+                                    hours === '0' ||
+                                    hours === ''
+                                ) {
+
+                                    cleanValue =
+                                        `${timeParts[1]}:${timeParts[2]}`;
+                                }
+                            }
+                        }
+
+                        /* =============================================
+                            COLORATION DES COLONNES DE CHOIX
+                          ============================================= */
+                        if (
+                            colonnesDeChoix.includes(
+                                colIndex
+                            ) &&
+                            rowIndex >= 2
+                        ) {
+
+                            cellClass +=
+                                ' col-choix';
+                        }
+
+                        /* =============================================
+                            CONTENU AVEC LIEN
+                          ============================================= */
+                        let displayContent =
+                            cleanValue;
+
+                        if (
+                            liensPersonnalises[
+                                cleanValue
+                            ]
+                        ) {
+
+                            displayContent = `
+
+                                <a
+                                    href="${liensPersonnalises[cleanValue]}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    ${cleanValue}
+                                </a>
+                            `;
+
+                        } else if (
+                            cleanValue.startsWith(
+                                'http://'
+                            ) ||
+                            cleanValue.startsWith(
+                                'https://'
+                            )
+                        ) {
+
+                            displayContent = `
+
+                                <a
+                                    href="${cleanValue}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    ${cleanValue}
+                                </a>
+
+                            `;
+                        }
+
+                        /* =============================================
+                            FOND NEUTRE DES GROUPES VIDES SUR UNE LIGNE
+                          ============================================= */
+                        if (
+                            rowIndex >= 2 &&
+                            colIndex >= 3
+                        ) {
+
+                            const debutGroupe =
+                                3 +
+                                Math.floor(
+                                    (colIndex - 3) / 5
+                                ) * 5;
+
+                            const finGroupe =
+                                debutGroupe + 5;
+
+                            const cellulesDuGroupe =
+                                cells.slice(
+                                    debutGroupe,
+                                    finGroupe
+                                );
+
+                            const estGroupeEntierementVide =
+                                cellulesDuGroupe.every(
+                                    val =>
+                                        val.trim() === ""
+                                );
+
+                            if (
+                                estGroupeEntierementVide
+                            ) {
+
+                                cellClass +=
+                                    ' groupe-vide';
+                            }
+                        }
+
+                        /* =============================================
+                            CORRECTION DES DATES EXCEL
+                          ============================================= */
+                        if (
+                            cleanValue.includes('-') ||
+                            (
+                                cleanValue.includes('/') &&
+                                cleanValue
+                                    .split('/')
+                                    .length === 3
+                            )
+                        ) {
+
+                            const mois = {
+
+                                "janv": "1",
+                                "févr": "2",
+                                "mars": "3",
+                                "avr": "4",
+                                "mai": "5",
+                                "juin": "6",
+                                "juil": "7",
+                                "août": "8",
+                                "sept": "9",
+                                "oct": "10",
+                                "nov": "11",
+                                "déc": "12",
+
+                                "sep": "9",
+                                "feb": "2",
+                                "apr": "4",
+                                "aug": "8",
+                                "dec": "12"
+                            };
+
+                            if (
+                                cleanValue.includes('-')
+                            ) {
+
+                                const parts =
+                                    cleanValue
+                                        .toLowerCase()
+                                        .replace('.', '')
+                                        .split('-');
+
+                                if (
+                                    parts.length === 2 &&
+                                    mois[parts[0]]
+                                ) {
+
+                                    cleanValue =
+                                        `${mois[parts[0]]}/${parts[1]}`;
+                                }
+
+                            } else {
+
+                                const parts =
+                                    cleanValue.split('/');
+
+                                const jour =
+                                    parseInt(
+                                        parts[0],
+                                        10
+                                    );
+
+                                const moisNum =
+                                    parseInt(
+                                        parts[1],
+                                        10
+                                    );
+
+                                if (
+                                    moisNum === 12
+                                ) {
+
+                                    cleanValue =
+                                        `${jour}/${moisNum}`;
+                                }
+                            }
+                        }
+
+                        /* =================================================
+                            FUSIONS DE LA LIGNE 1
+                          ================================================= */
+                        let colspanAttr = "";
+
+                        let skipCell = false;
+
+                        if (rowIndex === 0) {
+
+                            /* ---------------------------------------------
+                                GROUPE FIXE DES 3 PREMIÈRES COLONNES
+                              --------------------------------------------- */
+                            if (colIndex === 0) {
+
+                                colspanAttr =
+                                    ' colspan="3"';
+
+                            } else if (
+                                colIndex === 1 ||
+                                colIndex === 2
+                            ) {
+
+                                skipCell = true;
+                            }
+
+                            /* ---------------------------------------------
+                                GROUPES DE 5 COLONNES
+                              --------------------------------------------- */
+                            else if (
+                                colIndex >= 3
+                            ) {
+
+                                const positionDansLeBloc =
+                                    (colIndex - 3) % 5;
+
+                                if (
+                                    positionDansLeBloc === 0
+                                ) {
+
+                                    /* ===============================
+                                        FUSION DE 5 COLONNES
+                                      =============================== */
+                                    colspanAttr =
+                                        ' colspan="5" ';
+
+                                    /* ===============================
+                                        NUMÉRO DU GROUPE
+                                      =============================== */
+                                    const numeroGroupe =
+                                        Math.floor(
+                                            (colIndex - 3) / 5
+                                        ) + 1;
+
+                                    const cleInfo =
+                                        "groupe" +
+                                        numeroGroupe;
+
+                                    /* ===============================
+                                        AJOUT DU BOUTON INFO
+                                      =============================== */
+                                    if (
+                                        infosGroupes[
+                                            cleInfo
+                                        ]
+                                    ) {
+
+                                        displayContent += `
+
+                                            <button
+                                                type="button"
+                                                class="info-btn"
+                                                data-info="${cleInfo}"
+                                                aria-label="Informations"
+                                                title="Informations complémentaires"
+                                            >
+                                                ⓘ
+                                            </button>
+
+                                        `;
+                                    }
+
+                                } else {
+
+                                    skipCell = true;
+                                }
+                            }
+                        }
+
+                        /* ---------------------------------------------
+                            CELLULE IGNORÉE
+                          --------------------------------------------- */
+                        if (skipCell) {
+                            continue;
+                        }
+
+                        /* ---------------------------------------------
+                            CRÉATION DE LA CELLULE
+                          --------------------------------------------- */
+                        htmlRaw +=
+                            `<${cellTag}
+                                class="${cellClass}"
+                                ${colspanAttr}>
+                                ${displayContent}
+                            </${cellTag}>`;
+
+                    }
+
+                    htmlRaw += "</tr>";
+
+                }
+            );
+
+            /* =========================================================
+                FIN DU TABLEAU
+              ========================================================= */
+            htmlRaw +=
+                isBodyOpen
+                    ? "</tbody></table>"
+                    : "</thead></table>";
+
+            /* =========================================================
+                AFFICHAGE
+              ========================================================= */
+            const container =
+                document.getElementById(
+                    'excel-table-container'
+                );
+
+            container.innerHTML =
+                htmlRaw;
+
+            document.getElementById(
+                'loading'
+            ).style.display = 'none';
+
+        } catch (error) {
+
+            console.error(
+                "Détails :",
+                error
+            );
+
+            document.getElementById(
+                'loading'
+            ).innerText =
+                "Erreur : " + error.message;
+        }
+
+    }
+
+    /* =========================================================
+        FENÊTRE D'INFORMATIONS
+      ========================================================= */
+    const infoModal =
+        document.getElementById(
+            'info-modal'
+        );
+
+    const infoModalTitle =
+        document.getElementById(
+            'info-modal-title'
+        );
+
+    const infoModalBody =
+        document.getElementById(
+            'info-modal-body'
+        );
+
+    /* =========================================================
+        OUVERTURE
+      ========================================================= */
+    function ouvrirInfo(cleInfo) {
+
+        const info =
+            infosGroupes[cleInfo];
+
+        if (!info) {
+
+            return;
+        }
+
+        /* -----------------------------------------
+            TITRE
+          ----------------------------------------- */
+        infoModalTitle.textContent =
+            info.titre || "Informations";
+
+        /* -----------------------------------------
+            NETTOYAGE
+          ----------------------------------------- */
+        infoModalBody.innerHTML = "";
+
+        /* -----------------------------------------
+            TEXTES
+          ----------------------------------------- */
+        if (
+            Array.isArray(info.textes)
+        ) {
+
+            info.textes.forEach(
+                texte => {
+
+                    const p =
+                        document.createElement(
+                            "p"
+                        );
+
+                    p.className =
+                        "info-modal-text";
+
+                    p.textContent =
+                        texte;
+
+                    infoModalBody.appendChild(
+                        p
+                    );
+
+                }
+            );
+        }
+
+        /* -----------------------------------------
+            LIENS
+          ----------------------------------------- */
+        if (
+            Array.isArray(info.liens) &&
+            info.liens.length > 0
+        ) {
+
+            const blocLiens =
+                document.createElement(
+                    "div"
+                );
+
+            info.liens.forEach(
+                lien => {
+
+                    const p =
+                        document.createElement(
+                            "p"
+                        );
+
+                    const a =
+                        document.createElement(
+                            "a"
+                        );
+
+                    a.href =
+                        lien.url;
+
+                    a.target =
+                        "_blank";
+
+                    a.rel =
+                        "noopener noreferrer";
+
+                    a.textContent =
+                        "→ " + lien.texte;
+
+                    p.appendChild(a);
+
+                    blocLiens.appendChild(p);
+
+                }
+            );
+
+            infoModalBody.appendChild(
+                blocLiens
+            );
+        }
+
+        /* -----------------------------------------
+            DATE DE MISE À JOUR
+          ----------------------------------------- */
+        if (info.maj) {
+
+            const maj =
+                document.createElement(
+                    "p"
+                );
+
+            maj.style.fontSize =
+                "11px";
+
+            maj.style.opacity =
+                "0.7";
+
+            maj.style.marginTop =
+                "15px";
+
+            maj.textContent =
+                "Mis à jour le " +
+                info.maj;
+
+            infoModalBody.appendChild(
+                maj
+            );
+        }
+
+        /* -----------------------------------------
+            AFFICHAGE
+          ----------------------------------------- */
+        infoModal.style.display =
+            "flex";
+    }
+
+    /* =========================================================
+        FERMETURE
+      ========================================================= */
+    function fermerInfo() {
+
+        infoModal.style.display =
+            "none";
+    }
+
+    /* =========================================================
+        CLIC SUR UN BOUTON ⓘ
+      ========================================================= */
+    document.addEventListener(
+        "click",
+        function(event) {
+
+            const bouton =
+                event.target.closest(
+                    ".info-btn"
+                );
+
+            if (bouton) {
+
+                const cleInfo =
+                    bouton.dataset.info;
+
+                ouvrirInfo(
+                    cleInfo
+                );
+            }
+
+        }
+    );
+
+    /* =========================================================
+        BOUTON X
+      ========================================================= */
+    document
+        .querySelector(
+            ".info-modal-close"
+        )
+        .addEventListener(
+            "click",
+            fermerInfo
+        );
+
+    /* =========================================================
+        BOUTON FERMER
+      ========================================================= */
+    document
+        .getElementById(
+            "info-modal-close-btn"
+        )
+        .addEventListener(
+            "click",
+            fermerInfo
+        );
+
+    /* =========================================================
+        CLIC EN DEHORS DE LA FENÊTRE
+      ========================================================= */
+    infoModal.addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === infoModal
+            ) {
+
+                fermerInfo();
+            }
+
+        }
+    );
+
+    /* =========================================================
+        TOUCHE ÉCHAP
+      ========================================================= */
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+        
+                fermerInfo();
+            }
+
+        }
+    );
+
+    /* =========================================================
+        LANCEMENT
+      ========================================================= */
+    window.onload =
+        loadCsvTable;
+
+    </script>
+</div>
+
+<!-- =========================================================
+    PIED DE PAGE
+    ========================================================= -->
+<p style="color:#e0dada">
+
+    Tableau des horaires et résultats
+    mis à jour le 18/10/2026 15:37
+
+</p>
+</body>
+</html>
